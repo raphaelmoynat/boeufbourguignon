@@ -2,11 +2,16 @@
 
 const landing = document.querySelector('.landing')
 
-let backgrounds = ["bgCocotte", "bgBocaux", "bgPoelleFonte"]
+let backgrounds = ["bgCocotte", "bgBocaux", "bgPoeleFonte"]
 
-landing.classList.add(backgrounds[1])
-landing.classList.remove(backgrounds[1])
+setInterval(  change , 1000 )
 
-
-// faire en sorte que le background alterne parmis les trois disponibles
-// toutes les 3 secondes
+let index = 0
+function change(){
+    landing.classList.remove(backgrounds[index])
+    index++
+    if (index == backgrounds.length){
+        index = 0
+    }
+    landing.classList.add(backgrounds[index])
+}
